@@ -3,19 +3,19 @@ import './app.css';
 import ReactImage from './react.png';
 
 export default class App extends Component {
-  state = { username: null };
+  state = { uptime: null };
 
   componentDidMount() {
-    fetch('/api/getUsername')
+    fetch('/api/getUptime')
       .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
+      .then(user => this.setState({ uptime: user.uptime }));
   }
 
   render() {
-    const { username } = this.state;
+    const { uptime } = this.state;
     return (
       <div>
-        {username ? <h1>{`Hello ${username}`}</h1> : <h1>Loading.. please wait!</h1>}
+        {uptime ? <h1>{`Hello World! The system's uptime is ${uptime}`}</h1> : <h1>Loading.. please wait!</h1>}
         <img src={ReactImage} alt="react" />
       </div>
     );
