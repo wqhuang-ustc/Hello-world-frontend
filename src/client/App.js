@@ -12,13 +12,19 @@ export default class App extends Component {
       .then(user => this.setState({ uptime: user.uptime }));
   }
 
+  handleClick = () => {
+    fetch('/api/getUptime')
+      .then(res => res.json())
+      .then(user => this.setState({ uptime: user.uptime }));
+  }
+
   render() {
     const { uptime } = this.state;
     return (
       <div>
         {uptime ? <h1>{`Hello World! The system's uptime is ${uptime}`}</h1> : <h1>Loading.. please wait!</h1>}
-        <Button size="small" variant="contained" color="primary">update data</Button>
-        <img src={ReactImage} alt="react" />
+        <Button size="small" variant="contained" color="primary" onClick={this.handleClick}>update data</Button>
+        {/* <div><img src={ReactImage} alt="react" /></div> */}
       </div>
     );
   }
