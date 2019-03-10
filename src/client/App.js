@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './app.css';
 import ReactImage from './react.png';
+import Button from '@material-ui/core/Button';
 
 export default class App extends Component {
   state = { uptime: null };
@@ -16,6 +17,7 @@ export default class App extends Component {
     return (
       <div>
         {uptime ? <h1>{`Hello World! The system's uptime is ${uptime}`}</h1> : <h1>Loading.. please wait!</h1>}
+        <Button size="small" variant="contained" color="primary">update data</Button>
         <img src={ReactImage} alt="react" />
       </div>
     );
