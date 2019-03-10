@@ -1,8 +1,35 @@
-h1 {
-  color: green;
-}
-
 body {
   text-align: center;
-  margin: auto;
+}
+
+.update_time {
+  position: relative;
+  top: -12px;
+  line-height: 0.3;
+}
+
+.charts {
+  margin: 0 10% 12px 10%;
+}
+
+.button {
+  margin-top: 12px;
+}
+
+span + span {
+  margin-left: 24px;
+}
+
+.button_active {
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.button_inactive {
+  opacity: 0.4;
+  margin-top: 12px;
+}
+
+.hide {
+  display: none;
 }
