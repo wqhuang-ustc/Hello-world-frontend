@@ -105,12 +105,12 @@ class LineCharts extends Component {
       }
 
     render(){
-        const {height,DataSensor1,time } = this.state;
+        const {height,DataSensor1,DataSensor2, DataSensor3, DataSensor4, time } = this.state;
 
         return (
             <div>
                 <div className="charts">
-                    <h1>Data visualization of a sensors</h1>
+                    <h1>Data visualization of 4 sensors</h1>
                     <p className="update_time">Data updated at {time}</p>
                     <LineChart
                     data={DataSensor1}
