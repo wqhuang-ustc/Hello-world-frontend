@@ -32,6 +32,9 @@ class LineCharts extends Component {
             recent_active: 0,
             multiview: 1,
             DataSensor1: res[0],
+            DataSensor2: res[1],
+            DataSensor3: res[2],
+            DataSensor4: res[3],
             time: (new Date()).toISOString().split('.')[0].replace('T', '\xa0\xa0')
           }));
         console.log('Data init '.concat((new Date()).toISOString().split('.')[0].replace('T', ',')));
@@ -55,11 +58,17 @@ class LineCharts extends Component {
         if (this.state.all_active === 1) {
           this.setState({
             DataSensor1: res[0],
+            DataSensor2: res[1],
+            DataSensor3: res[2],
+            DataSensor4: res[3],
             time: (new Date()).toISOString().split('.')[0].replace('T', '\xa0\xa0')
           });
         } else {
           this.setState({
             DataSensor1: res[0].slice(Math.max(res[0].length - 24, 1)),
+            DataSensor2: res[1].slice(Math.max(res[1].length - 24, 1)),
+            DataSensor3: res[2].slice(Math.max(res[2].length - 24, 1)),
+            DataSensor4: res[3].slice(Math.max(res[3].length - 24, 1)),
             time: (new Date()).toISOString().split('.')[0].replace('T', '\xa0\xa0')
           });
         }
@@ -74,6 +83,9 @@ class LineCharts extends Component {
           all_active: 1,
           recent_active: 0,
           DataSensor1: res[0],
+          DataSensor2: res[1],
+          DataSensor3: res[2],
+          DataSensor4: res[3],
           time: (new Date()).toISOString().split('.')[0].replace('T', '\xa0\xa0')
         }));
     }
@@ -85,6 +97,9 @@ class LineCharts extends Component {
           all_active: 0,
           recent_active: 1,
           DataSensor1: res[0].slice(Math.max(res[0].length - 24, 1)),
+          DataSensor2: res[1].slice(Math.max(res[1].length - 24, 1)),
+          DataSensor3: res[2].slice(Math.max(res[2].length - 24, 1)),
+          DataSensor4: res[3].slice(Math.max(res[3].length - 24, 1)),
           time: (new Date()).toISOString().split('.')[0].replace('T', '\xa0\xa0')
         }));
       }
@@ -101,6 +116,24 @@ class LineCharts extends Component {
                     data={DataSensor1}
                     label="value"
                     ytitle="Sensor 1"
+                    height={height}
+                    />
+                    <LineChart
+                    data={DataSensor2}
+                    label="value"
+                    ytitle="Sensor 2"
+                    height={height}
+                    />
+                    <LineChart
+                    data={DataSensor3}
+                    label="value"
+                    ytitle="Sensor 3"
+                    height={height}
+                    />
+                    <LineChart
+                    data={DataSensor4}
+                    label="value"
+                    ytitle="Sensor 4"
                     height={height}
                     />
                 </div>
